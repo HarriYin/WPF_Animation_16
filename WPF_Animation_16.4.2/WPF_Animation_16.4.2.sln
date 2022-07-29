@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_Animation_16.4.2", "WPF_Animation_16.4.2.csproj", "{8CB8854F-EDAE-41A8-B7E9-71EE8A3CDACF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_Animation_16.3.3", "..\WPF_Animation_16.3.3\WPF_Animation_16.3.3.csproj", "{35C2CB40-CA89-4860-A323-6B27378AB9DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CB8854F-EDAE-41A8-B7E9-71EE8A3CDACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB8854F-EDAE-41A8-B7E9-71EE8A3CDACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB8854F-EDAE-41A8-B7E9-71EE8A3CDACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB8854F-EDAE-41A8-B7E9-71EE8A3CDACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C2CB40-CA89-4860-A323-6B27378AB9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C2CB40-CA89-4860-A323-6B27378AB9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C2CB40-CA89-4860-A323-6B27378AB9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C2CB40-CA89-4860-A323-6B27378AB9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A65B9A38-445D-4B92-83B2-51C7B3740CB5}
+	EndGlobalSection
+EndGlobal
