@@ -1,0 +1,233 @@
+﻿<Window
+    x:Class="WPF_Animation_16._5.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_Animation_16._5"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="667"
+    Height="350"
+    mc:Ignorable="d">
+
+    <Window.Triggers>
+        <!--  开始动画  -->
+        <EventTrigger RoutedEvent="Button.Click" SourceName="btnStart">
+            <BeginStoryboard x:Name="MyBeginStoryboard">
+                <Storyboard>
+                    <!--  让角度沿路径运动  -->
+                    <DoubleAnimationUsingPath
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"
+                        Source="Angle"
+                        Storyboard.TargetName="MyRotateTransform"
+                        Storyboard.TargetProperty="Angle"
+                        Duration="0:0:10">
+                        <DoubleAnimationUsingPath.PathGeometry>
+                            <PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 " />
+                        </DoubleAnimationUsingPath.PathGeometry>
+                    </DoubleAnimationUsingPath>
+
+                    <!--  让X坐标沿路径运动  -->
+                    <DoubleAnimationUsingPath
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"
+                        Source="X"
+                        Storyboard.TargetName="MyTranslateTransform"
+                        Storyboard.TargetProperty="X"
+                        Duration="0:0:10">
+                        <DoubleAnimationUsingPath.PathGeometry>
+                            <PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 " />
+                        </DoubleAnimationUsingPath.PathGeometry>
+                    </DoubleAnimationUsingPath>
+
+                    <!--  让Y坐标沿路径运动  -->
+                    <DoubleAnimationUsingPath
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"
+                        Source="Y"
+                        Storyboard.TargetName="MyTranslateTransform"
+                        Storyboard.TargetProperty="Y"
+                        Duration="0:0:10">
+                        <DoubleAnimationUsingPath.PathGeometry>
+                            <PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 " />
+                        </DoubleAnimationUsingPath.PathGeometry>
+                    </DoubleAnimationUsingPath>
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+
+        <!--  暂停动画  -->
+        <EventTrigger RoutedEvent="Button.Click" SourceName="btnPause">
+            <PauseStoryboard BeginStoryboardName="MyBeginStoryboard" />
+        </EventTrigger>
+
+        <!--  恢复动画  -->
+        <EventTrigger RoutedEvent="Button.Click" SourceName="btnResume">
+            <ResumeStoryboard BeginStoryboardName="MyBeginStoryboard" />
+        </EventTrigger>
+
+        <!--  结束动画  -->
+        <EventTrigger RoutedEvent="Button.Click" SourceName="btnStop">
+            <StopStoryboard BeginStoryboardName="MyBeginStoryboard" />
+        </EventTrigger>
+
+    </Window.Triggers>
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="15" Orientation="Horizontal">
+            <Button
+                x:Name="btnStart"
+                Width="91"
+                Height="33"
+                Margin="20,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnStart_Click"
+                Content="Start" />
+
+            <Button
+                x:Name="btnPause"
+                Width="91"
+                Height="33"
+                Margin="20,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnPause_Click"
+                Content="Pause" />
+
+            <Button
+                x:Name="btnResume"
+                Width="91"
+                Height="33"
+                Margin="20,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnResume_Click"
+                Content="Resume" />
+
+            <Button
+                x:Name="btnStop"
+                Width="91"
+                Height="33"
+                Margin="20,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnStop_Click"
+                Content="Stop" />
+        </StackPanel>
+
+        <Canvas Grid.Row="1">
+            <!--  运动轨迹  -->
+            <Path
+                Canvas.Left="65"
+                Canvas.Top="35"
+                Panel.ZIndex="2"
+                Data="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 "
+                Stroke="Black"
+                StrokeThickness="1" />
+
+            <Image
+                Canvas.Left="50"
+                Canvas.Top="20"
+                Width="30"
+                Height="30"
+                Source="images/实心飞机.png">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="MyRotateTransform" Angle="0" CenterX="15" CenterY="15" />
+                        <TranslateTransform x:Name="MyTranslateTransform" X="10" Y="100" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+
+                <Image.Triggers>
+                    <!--  开始动画  -->
+                    <!--
+                    <EventTrigger RoutedEvent="Button.Click" SourceName="btnStart">
+                        <BeginStoryboard x:Name="MyBeginStoryboard">
+                            <Storyboard>
+                    -->
+                    <!--  让角度沿路径运动  -->
+                    <!--
+                                <DoubleAnimationUsingPath
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Source="Angle"
+                                    Storyboard.TargetName="MyRotateTransform"
+                                    Storyboard.TargetProperty="Angle"
+                                    Duration="0:0:10">
+                                    <DoubleAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 " />
+                                    </DoubleAnimationUsingPath.PathGeometry>
+                                </DoubleAnimationUsingPath>
+
+                    -->
+                    <!--  让X坐标沿路径运动  -->
+                    <!--
+                                <DoubleAnimationUsingPath
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Source="X"
+                                    Storyboard.TargetName="MyTranslateTransform"
+                                    Storyboard.TargetProperty="X"
+                                    Duration="0:0:10">
+                                    <DoubleAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 " />
+                                    </DoubleAnimationUsingPath.PathGeometry>
+                                </DoubleAnimationUsingPath>
+
+                    -->
+                    <!--  让Y坐标沿路径运动  -->
+                    <!--
+                                <DoubleAnimationUsingPath
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Source="Y"
+                                    Storyboard.TargetName="MyTranslateTransform"
+                                    Storyboard.TargetProperty="Y"
+                                    Duration="0:0:10">
+                                    <DoubleAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M 10,100 C 35,0 135,0 160,100 180,190 285,200 310,100 " />
+                                    </DoubleAnimationUsingPath.PathGeometry>
+                                </DoubleAnimationUsingPath>
+
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+
+                    -->
+                    <!--  暂停动画  -->
+                    <!--
+                    <EventTrigger RoutedEvent="Button.Click" SourceName="btnPause">
+                        <PauseStoryboard BeginStoryboardName="MyBeginStoryboard" />
+                    </EventTrigger>
+
+                    -->
+                    <!--  恢复动画  -->
+                    <!--
+                    <EventTrigger RoutedEvent="Button.Click" SourceName="btnResume">
+                        <ResumeStoryboard BeginStoryboardName="MyBeginStoryboard" />
+                    </EventTrigger>
+
+                    -->
+                    <!--  结束动画  -->
+                    <!--
+                    <EventTrigger RoutedEvent="Button.Click" SourceName="btnStop">
+                        <StopStoryboard BeginStoryboardName="MyBeginStoryboard" />
+                    </EventTrigger>-->
+
+
+                </Image.Triggers>
+            </Image>
+        </Canvas>
+
+    </Grid>
+</Window>

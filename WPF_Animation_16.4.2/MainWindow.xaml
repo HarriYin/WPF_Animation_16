@@ -25,13 +25,13 @@
                     <Storyboard TargetProperty="(Canvas.Left)" TargetName="elips">
                         <DoubleAnimationUsingKeyFrames RepeatBehavior="Forever" Duration="0:0:10">
                             <LinearDoubleKeyFrame KeyTime="0:0:5" Value="0" />
-                            <!--<LinearDoubleKeyFrame KeyTime="0:0:5.5" Value="48" />
+                            <LinearDoubleKeyFrame KeyTime="0:0:5.5" Value="48" />
                             <DiscreteDoubleKeyFrame KeyTime="0:0:6" Value="144" />
-                            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="240" />-->
-                            <SplineDoubleKeyFrame
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="240" />
+                            <!--<SplineDoubleKeyFrame
                                 KeySpline="0.20,0.50, 1.00,0.30"
                                 KeyTime="0:0:10"
-                                Value="400" />
+                                Value="400" />-->
 
                             <!--<LinearDoubleKeyFrame KeyTime="50%" Value="0" />
                             <LinearDoubleKeyFrame KeyTime="55%" Value="48" />
